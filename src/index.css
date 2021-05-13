@@ -1,5 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -115,6 +119,8 @@ body {
     justify-content: center;
 
     font-size: 21px;
+
+    margin-top: 5rem;
 }
 /* Content title style over */
 
@@ -135,6 +141,10 @@ body {
 
     font-size: 18px;
     color: whitesmoke;
+}
+
+.content-body p {
+    max-width: 50%;
 }
 /* Body content style over */
 
