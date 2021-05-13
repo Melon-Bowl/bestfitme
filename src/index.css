@@ -100,6 +100,24 @@ body {
 /* Waves over */
 
 
+/* About page title */
+.page-title {
+    color: #2c2c2c;
+    font-size: 44px;
+    font-weight: bold;
+}
+/* About page title over */
+
+/* Content title style */
+.content-title {
+    display: flex;
+    justify-content: center;
+
+    font-size: 21px;
+
+}
+/* Content title style over */
+
 /* Animations */
 @keyframes slide{
     0% { transform: translate3d(0, 0, 0); }
