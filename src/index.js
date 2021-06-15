@@ -98,28 +98,27 @@ const connectToApi = () => {
 }
 
 const analysePhoto = () => {
-  //connectToApi();
+  connectToApi();
   const url = 'https://api.bestfitme.com/v5/photo'; 
   const formData = new FormData();
   const fileField = document.querySelector("#userImage");
 
   formData.append('', fileField.files[0]);
-  console.log(formData);
-  console.log(fileField.files[0]);
+  console.log(accessToken);
 
   const optParam = {
     headers: {
-      "Content-Type": "multipart/form-data",
+      "content-type": "multipart/form-data",
       "host": "https://api.bestfitme.com",
-      "Authorization": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJodHRwOi8vc2NoZW1hcy54bWxzb2FwLm9yZy93cy8yMDA1LzA1L2lkZW50aXR5L2NsYWltcy9uYW1lIjoiTmlraXRhX0Vnb3IiLCJ0bi9hY2NvdW50L2lkIjoiZjQ1ZmVlODY1MDk2NDBjZGJiZGRmOTgyY2I3NDM3MGUiLCJuYmYiOjE2MjE0Mjg1MTUsImV4cCI6MTYyMTUxNDkxNSwiaXNzIjoiVHJ1ZU5vcnRoIn0.9BSePfN4uGk5MCuv7Iwi5DdLxO8i6Hqf5XbrXiWCHLU"
+      "authorization": accessToken
     },
     body: formData,
-    mode: "no-cors",
+    mode: "cors",
     method: "POST"
   }
 
   fetch(url, optParam, {
-    credentials: 'same-origin'
+    credentials: 'include'
   })
   .then(response => response.json())
   .then(data => console.log("Success!", data))
